@@ -4,7 +4,7 @@ build-backend = "pdm.backend"
 
 [project]
 name = "dfndfl"
-version = "1.0.0"
+version = "1.1.0"
 authors = [
   { name="Andrea Petruzzi", email="petruzzi.1982874@studenti.uniroma1.it" },
   { name="Tommaso Giovannelli", email="giovanto@ucmail.uc.edu" },

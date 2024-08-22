@@ -16,7 +16,6 @@
 # lbmix  : numpy array - the actual lower bounds of the mixed integer problem
 # ubmix  : numpy array - the actual upper bounds of the mixed integer problem
 # x_initial : numpy array - the actual initial point of the mixed integer problem
-# xmix   : numpy array - a temporary array used for computation
 # feval  : function handle - function to compute the objective function value
 #        : N.B. the point must be reconstructed through the use of reconstruct_xmix
 #        :      before calling feval!
@@ -103,7 +102,7 @@ class Problem:
     def fconstr_z(self,x):
         return np.array([-1.0])
 
-    def __init__(self,name,startp,lb,ub,nint,ncont,lbmix,ubmix,x_initial,xmix,feval):
+    def __init__(self,name,startp,lb,ub,nint,ncont,lbmix,ubmix,x_initial,feval):
         self.name = name
         self.startp = startp
         self.lb = lb
@@ -114,7 +113,7 @@ class Problem:
         self.lbmix = lbmix
         self.ubmix = ubmix
         self.x_initial = x_initial
-        self.xmix = xmix
+        self.xmix = np.zeros(self.n)
         self.feval = feval
         if self.n >= 3:
             self.m = {

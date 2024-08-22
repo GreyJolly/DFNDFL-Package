@@ -91,7 +91,6 @@ def test_dfn_dfl(problem_name):
         'lbmix': problem_module.lbmix,
         'ubmix': problem_module.ubmix,
         'x_initial': problem_module.x_initial,
-        'xmix': problem_module.xmix,
         'feval': problem_module.feval,
     }
 

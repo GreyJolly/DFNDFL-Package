@@ -17,12 +17,12 @@ logger = logging.getLogger(__name__)
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description='Run a DFO')
-    parser.add_argument('--problem-path', type=str, required=True, help='Path to the Python file containing the problem definition')
-    parser.add_argument('--constrained', action='store_true', help='Solve constrained problem')
-    parser.add_argument('--alg', type=str, default='DFN_DFL', choices=["DFN_DFL", "DFL"], help='Algorithm to be used')
-    parser.add_argument('--max_fun', type=int, default=5000, help='Maximum number of function evaluations')
-    parser.add_argument('--outlev', type=int, default=1, help='Output level')
-    parser.add_argument('--NM_memory', type=int, default=3, help='History size for nonmonotone linesearch')
+    parser.add_argument('-p', '--problem-path', type=str, required=True, help='Path to the Python file containing the problem definition')
+    parser.add_argument('-c','--constrained', action='store_true', help='Solve constrained problem')
+    parser.add_argument('-a', '--alg', type=str, default='DFN_DFL', choices=["DFN_DFL", "DFL"], help='Algorithm to be used')
+    parser.add_argument('-m', '--max_fun', type=int, default=5000, help='Maximum number of function evaluations')
+    parser.add_argument('-o', '--outlev', type=int, default=1, help='Output level')
+    parser.add_argument('-N', '--NM_memory', type=int, default=3, help='History size for nonmonotone linesearch')
     return parser.parse_args()
 
 def load_problem_from_path(path):
@@ -30,7 +30,7 @@ def load_problem_from_path(path):
     problem_module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(problem_module)
 
-    required_vars = ['name', 'startp', 'lb', 'ub', 'nint', 'ncont', 'lbmix', 'ubmix', 'x_initial', 'feval', 'xmix']
+    required_vars = ['name', 'startp', 'lb', 'ub', 'nint', 'ncont', 'lbmix', 'ubmix', 'x_initial', 'feval']
     problem_args = {}
 
     for var in required_vars:
