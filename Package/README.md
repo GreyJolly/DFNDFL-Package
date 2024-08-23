@@ -64,7 +64,7 @@ Optional arguments:
 
 ## Logging
 
-The DFNDFL package uses Python's `logging` module to log results and progress. The log level is set to `INFO` by default. You can adjust the log level by modifying the `logging.basicConfig(level=logging.INFO)` line in `run.py`.
+The DFNDFL package uses Python's `logging` module to log results and progress. The logger's name is set as `dfndfl`.
 
 ## License
 This project is licensed under the GNU General Public License - see the [LICENSE](./LICENSE) for details.

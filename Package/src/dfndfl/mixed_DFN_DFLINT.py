@@ -11,8 +11,8 @@ import ghalton
 from . import cs_dfn
 import logging
 
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("dfndfl")
+logger.addHandler(logging.NullHandler())
 
 def box_DFN_DFL(alg, M, J, V, CACHE, max_fun, outlev):
     #

@@ -13,7 +13,7 @@ from dfndfl.problem_runner import Cache, Problem
 from dfndfl import mixed_DFN_DFLINT as dfn_dflint
 
 logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("dfndfl")
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description='Run a DFO')

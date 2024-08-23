@@ -11,8 +11,7 @@ import ghalton
 import sobol_seq
 import logging
 
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("dfndfl")
 
 class cs_dfn:
 
@@ -73,6 +72,7 @@ class cs_dfn:
     fz2 = 0
 
     def __init__(self,functpen,f,J,V,eps,xtot,nf_max,tol,bl,bu,iprint):
+        
         """
         Parameters
         ----------
